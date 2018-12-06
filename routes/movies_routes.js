@@ -10,4 +10,8 @@ router.get('/:id', (req, res) => {
     queries.readMovieById(req.params.id).then(movie => res.status(200).send({ movie }))
 })
 
+router.post('/', (req, res) => {
+    queries.createMovie(req.body).then(newMovie => res.status(201).send(newMovie))
+}) 
+
 module.exports = router
